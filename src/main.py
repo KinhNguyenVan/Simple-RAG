@@ -3,7 +3,7 @@ import os
 import time
 
 def main():
-    with open('contents.txt', 'r', encoding='utf-8') as file:  
+    with open('D:/Simple-RAG/data/contents.txt', 'r', encoding='utf-8') as file:  
         contents = file.readlines()  
 
     model = MyModel(contents=contents)
@@ -15,9 +15,12 @@ def main():
     print(f"Runining Time: {end - start} seconds")
 
     start = time.time()
-    
+
     query = "when is the latest update?"
 
     print(f"Answer: {model.make_response(query)}")
     end = time.time()
     print(f"Runining Time: {end - start} seconds")
+
+if __name__=='__main__':
+    main()
